@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "cart": "Cart",
+    "profile": "Profile",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Professional Safety Nets & Security Solutions",
+      "subtitle": "High-quality safety nets for sports, industry and private use. Custom solutions for your security requirements.",
+      "cta": "Configure Now",
+      "browse": "Browse Products"
+    },
+    "features": {
+      "title": "Why Choose Us?",
+      "quality": {
+        "title": "Premium Quality",
+        "description": "Only the best materials and craftsmanship for durable safety nets"
+      },
+      "custom": {
+        "title": "Custom Made",
+        "description": "Individual configuration according to your exact requirements"
+      },
+      "fast": {
+        "title": "Fast Delivery",
+        "description": "Express shipping and professional installation available"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Expert advice and support around the clock"
+      }
+    },
+    "categories": {
+      "title": "Our Product Categories",
+      "sports": "Sports Nets",
+      "safety": "Safety Nets",
+      "industrial": "Industrial Nets",
+      "residential": "Residential"
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact"
+    },
+    "bestseller": {
+      "title": "Bestseller",
+      "customMade": "Custom-made protective nets",
+      "safetyNets": "Safety nets",
+      "climbingNets": "Climbing nets",
+      "wireRopeNets": "Wire rope nets",
+      "fabricTarpaulins": "Fabric tarpaulins",
+      "goalNets": "Goal nets",
+      "homeGarden": "Nets for home and garden",
+      "leafNets": "Leaf nets",
+      "animalProtection": "Animal protection nets",
+      "sportsNets": "Sports nets",
+      "balconyNets": "Balcony nets",
+      "more": "more...",
+      "industryConstruction": "Networks for industry and construction",
+      "personalSecurity": "Personal security",
+      "constructionEquipment": "Construction site equipment",
+      "structuralSecurity": "Structural security",
+      "loadSecuring": "Load securing"
+    },
+    "information": {
+      "title": "Information",
+      "networkStrengths": "Overview of all network strengths",
+      "installationGuide": "Installation of protective nets",
+      "constructionGuidelines": "Guidelines for construction networks",
+      "safetyCalculator": "Safety net calculator EN 1263-1",
+      "faq": "Frequently Asked Questions - FAQ",
+      "customerPhotos": "Customer photos",
+      "references": "Reference customers",
+      "remainingStock": "Remaining stock"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "buyerProtection": "Buyer & Data Protection",
+      "professionalAdvice": "professional advice",
+      "secureOrdering": "secure ordering process",
+      "ehiCertified": "EHI Certified Online Shop",
+      "testedProcesses": "tested processes",
+      "dataSecurity": "Data security",
+      "secureIT": "secure IT infrastructure"
+    },
+    "awards": {
+      "title": "Awards"
+    },
+    "allRightsReserved": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "imprint": "Imprint",
+    "cookies": "Cookies"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "phone": "Phone",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "hasAccount": "Already have an account?",
+    "signIn": "Sign In",
+    "signUp": "Sign Up"
+  },
+  "cart": {
+    "title": "Shopping Cart",
+    "empty": "Your cart is empty",
+    "total": "Total",
+    "checkout": "Checkout",
+    "continue": "Continue Shopping",
+    "remove": "Remove",
+    "quantity": "Quantity"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "price": "Price",
+    "availability": "Availability",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock"
+  }
+}

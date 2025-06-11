@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "categories": "Kategorien",
+    "about": "Über uns",
+    "contact": "Kontakt",
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "logout": "Abmelden",
+    "cart": "Warenkorb",
+    "profile": "Profil",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Professionelle Schutznetze & Sicherheitslösungen",
+      "subtitle": "Hochwertige Schutznetze für Sport, Industrie und Privat. Maßgefertigte Lösungen für Ihre Sicherheitsanforderungen.",
+      "cta": "Jetzt konfigurieren",
+      "browse": "Produkte durchsuchen"
+    },
+    "features": {
+      "title": "Warum uns wählen?",
+      "quality": {
+        "title": "Premium Qualität",
+        "description": "Nur die besten Materialien und Verarbeitung für langlebige Schutznetze"
+      },
+      "custom": {
+        "title": "Maßanfertigung",
+        "description": "Individuelle Konfiguration nach Ihren exakten Anforderungen"
+      },
+      "fast": {
+        "title": "Schnelle Lieferung",
+        "description": "Express-Versand und professionelle Montage verfügbar"
+      },
+      "support": {
+        "title": "24/7 Support",
+        "description": "Kompetente Beratung und Unterstützung rund um die Uhr"
+      }
+    },
+    "categories": {
+      "title": "Unsere Produktkategorien",
+      "sports": "Sportnetze",
+      "safety": "Sicherheitsnetze",
+      "industrial": "Industrienetze",
+      "residential": "Privatbereich"
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "Kontakt"
+    },
+    "bestseller": {
+      "title": "Bestseller",
+      "customMade": "Maßgefertigte Schutznetze",
+      "safetyNets": "Sicherheitsnetze",
+      "climbingNets": "Kletternetze",
+      "wireRopeNets": "Drahtseilnetze",
+      "fabricTarpaulins": "Gewebeplanen",
+      "goalNets": "Tornetze",
+      "homeGarden": "Netze für Haus und Garten",
+      "leafNets": "Laubnetze",
+      "animalProtection": "Tierschutznetze",
+      "sportsNets": "Sportnetze",
+      "balconyNets": "Balkonnetze",
+      "more": "mehr...",
+      "industryConstruction": "Netze für Industrie und Bau",
+      "personalSecurity": "Personensicherung",
+      "constructionEquipment": "Baustellenausstattung",
+      "structuralSecurity": "Gebäudesicherung",
+      "loadSecuring": "Ladungssicherung"
+    },
+    "information": {
+      "title": "Information",
+      "networkStrengths": "Übersicht aller Netzstärken",
+      "installationGuide": "Montage von Schutznetzen",
+      "constructionGuidelines": "Richtlinien für Baunetze",
+      "safetyCalculator": "Sicherheitsnetz-Rechner EN 1263-1",
+      "faq": "Häufig gestellte Fragen - FAQ",
+      "customerPhotos": "Kundenfotos",
+      "references": "Referenzkunden",
+      "remainingStock": "Restposten"
+    },
+    "certifications": {
+      "title": "Zertifizierungen",
+      "buyerProtection": "Käuferschutz & Datenschutz",
+      "professionalAdvice": "professionelle Beratung",
+      "secureOrdering": "sicherer Bestellprozess",
+      "ehiCertified": "EHI Geprüfter Online-Shop",
+      "testedProcesses": "geprüfte Prozesse",
+      "dataSecurity": "Datensicherheit",
+      "secureIT": "sichere IT-Infrastruktur"
+    },
+    "awards": {
+      "title": "Auszeichnungen"
+    },
+    "allRightsReserved": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "AGB",
+    "imprint": "Impressum",
+    "cookies": "Cookies"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "name": "Name",
+    "phone": "Telefon",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "signIn": "Anmelden",
+    "signUp": "Registrieren"
+  },
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Ihr Warenkorb ist leer",
+    "total": "Gesamt",
+    "checkout": "Zur Kasse",
+    "continue": "Weiter einkaufen",
+    "remove": "Entfernen",
+    "quantity": "Anzahl"
+  },
+  "common": {
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolgreich",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "search": "Suchen",
+    "filter": "Filter",
+    "sort": "Sortieren",
+    "price": "Preis",
+    "availability": "Verfügbarkeit",
+    "inStock": "Auf Lager",
+    "outOfStock": "Nicht verfügbar"
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "products": "Produits",
+    "categories": "Catégories",
+    "about": "À propos",
+    "contact": "Contact",
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "logout": "Déconnexion",
+    "cart": "Panier",
+    "profile": "Profil",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "title": "Filets de Protection & Solutions de Sécurité Professionnels",
+      "subtitle": "Filets de sécurité de haute qualité pour le sport, l'industrie et l'usage privé. Solutions sur mesure pour vos exigences de sécurité.",
+      "cta": "Configurer Maintenant",
+      "browse": "Parcourir les Produits"
+    },
+    "features": {
+      "title": "Pourquoi Nous Choisir ?",
+      "quality": {
+        "title": "Qualité Premium",
+        "description": "Seulement les meilleurs matériaux et savoir-faire pour des filets durables"
+      },
+      "custom": {
+        "title": "Sur Mesure",
+        "description": "Configuration individuelle selon vos exigences exactes"
+      },
+      "fast": {
+        "title": "Livraison Rapide",
+        "description": "Expédition express et installation professionnelle disponibles"
+      },
+      "support": {
+        "title": "Support 24/7",
+        "description": "Conseils d'experts et support 24h/24"
+      }
+    },
+    "categories": {
+      "title": "Nos Catégories de Produits",
+      "sports": "Filets de Sport",
+      "safety": "Filets de Sécurité",
+      "industrial": "Filets Industriels",
+      "residential": "Résidentiel"
+    }
+  },
+  "footer": {
+    "contact": {
+      "title": "Contact"
+    },
+    "bestseller": {
+      "title": "Meilleures ventes",
+      "customMade": "Filets de protection sur mesure",
+      "safetyNets": "Filets de sécurité",
+      "climbingNets": "Filets d'escalade",
+      "wireRopeNets": "Filets en câble métallique",
+      "fabricTarpaulins": "Bâches en tissu",
+      "goalNets": "Filets de but",
+      "homeGarden": "Filets pour la maison et le jardin",
+      "leafNets": "Filets à feuilles",
+      "animalProtection": "Filets de protection des animaux",
+      "sportsNets": "Filets de sport",
+      "balconyNets": "Filets de balcon",
+      "more": "plus...",
+      "industryConstruction": "Réseaux pour l'industrie et la construction",
+      "personalSecurity": "Sécurité personnelle",
+      "constructionEquipment": "Équipement de chantier",
+      "structuralSecurity": "Sécurité structurelle",
+      "loadSecuring": "Arrimage de charge"
+    },
+    "information": {
+      "title": "Information",
+      "networkStrengths": "Aperçu de toutes les forces du réseau",
+      "installationGuide": "Installation de filets de protection",
+      "constructionGuidelines": "Directives pour les réseaux de construction",
+      "safetyCalculator": "Calculateur de filet de sécurité EN 1263-1",
+      "faq": "Questions fréquemment posées - FAQ",
+      "customerPhotos": "Photos de clients",
+      "references": "Clients de référence",
+      "remainingStock": "Stock restant"
+    },
+    "certifications": {
+      "title": "Certifications",
+      "buyerProtection": "Protection de l'acheteur et des données",
+      "professionalAdvice": "conseils professionnels",
+      "secureOrdering": "processus de commande sécurisé",
+      "ehiCertified": "Boutique en ligne certifiée EHI",
+      "testedProcesses": "processus testés",
+      "dataSecurity": "Sécurité des données",
+      "secureIT": "infrastructure informatique sécurisée"
+    },
+    "awards": {
+      "title": "Récompenses"
+    },
+    "allRightsReserved": "Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "imprint": "Mentions légales",
+    "cookies": "Cookies"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "name": "Nom",
+    "phone": "Téléphone",
+    "forgotPassword": "Mot de passe oublié ?",
+    "noAccount": "Pas de compte ?",
+    "hasAccount": "Déjà un compte ?",
+    "signIn": "Se connecter",
+    "signUp": "S'inscrire"
+  },
+  "cart": {
+    "title": "Panier",
+    "empty": "Votre panier est vide",
+    "total": "Total",
+    "checkout": "Commander",
+    "continue": "Continuer les achats",
+    "remove": "Supprimer",
+    "quantity": "Quantité"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "sort": "Trier",
+    "price": "Prix",
+    "availability": "Disponibilité",
+    "inStock": "En stock",
+    "outOfStock": "Rupture de stock"
+  }
+}
