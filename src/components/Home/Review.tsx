@@ -18,7 +18,7 @@ const testimonials = [
 
 export default function Review() {
   return (
-    <div className="max-w-7xl m-auto border-b border-gray-800">
+    <div className="border-b border-gray-800">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h3 className="text-center text-lg font-semibold mb-6">
           What Our Customers Say
