@@ -1,245 +1,226 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import { Eye, EyeOff, Shield, Mail, Lock, User, Phone } from 'lucide-react';
-import { loginStart, loginSuccess, loginFailure } from '../store/slices/authSlice';
-import { addNotification } from '../store/slices/uiSlice';
+import {
+  Box,
+  Button,
+  Checkbox,
+  FormControl,
+  FormControlLabel,
+  Grid,
+  InputLabel,
+  MenuItem,
+  Select,
+  Snackbar,
+  TextField,
+  Typography
+} from '@mui/material';
+import MuiAlert from '@mui/material/Alert';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 
-const registerSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
-  password: z.string().min(6, 'Password must be at least 6 characters'),
-  confirmPassword: z.string(),
-}).refine((data) => data.password === data.confirmPassword, {
-  message: "Passwords don't match",
-  path: ["confirmPassword"],
+const Alert = React.forwardRef<HTMLDivElement, any>(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
-type RegisterFormData = z.infer<typeof registerSchema>;
-
 const Register: React.FC = () => {
-  const { t } = useTranslation();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors, isSubmitting },
-  } = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+  const formik = useFormik({
+    initialValues: {
+      customerGroup: '',
+      firstName: '',
+      lastName: '',
+      street: '',
+      postalCode: '',
+      location: '',
+      country: 'Germany',
+      email: '',
+      repeatEmail: '',
+      createAccount: false,
+      phone: '',
+      fax: ''
+    },
+    validationSchema: Yup.object({
+      customerGroup: Yup.string().required('Required'),
+      firstName: Yup.string().required('Required'),
+      lastName: Yup.string().required('Required'),
+      street: Yup.string().required('Required'),
+      postalCode: Yup.string().required('Required'),
+      location: Yup.string().required('Required'),
+      country: Yup.string().required('Required'),
+      email: Yup.string().email('Invalid email').required('Required'),
+      repeatEmail: Yup.string()
+        .oneOf([Yup.ref('email')], 'Emails must match')
+        .required('Required')
+    }),
+    onSubmit: async (values) => {
+      try {
+        // Simulated API request
+        console.log(values);
+        setSnackbar({ open: true, message: 'Signup successful!', severity: 'success' });
+      } catch (error) {
+        setSnackbar({ open: true, message: 'Signup failed. Please try again.', severity: 'error' });
+      }
+    }
   });
 
-  const onSubmit = async (data: RegisterFormData) => {
-    try {
-      dispatch(loginStart());
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Mock successful registration and login
-      const mockUser = {
-        id: '1',
-        email: data.email,
-        name: data.name,
-        role: 'customer' as const,
-        phone: data.phone,
-      };
-      
-      dispatch(loginSuccess(mockUser));
-      dispatch(addNotification({
-        type: 'success',
-        message: 'Account created successfully!',
-      }));
-      
-      navigate('/');
-    } catch (error) {
-      dispatch(loginFailure('Registration failed. Please try again.'));
-      dispatch(addNotification({
-        type: 'error',
-        message: 'Registration failed. Please try again.',
-      }));
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-50 to-secondary-50 flex items-center justify-center p-4">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="max-w-md w-full"
+    <Box sx={{ p: 3 }}>
+      <Typography variant="h5" gutterBottom>
+        Information about your customer account
+      </Typography>
+      <form onSubmit={formik.handleSubmit}>
+        <Grid container spacing={2}>
+          {/* Billing Address */}
+          <Grid size={{xs:12, md:6}}>
+            <Typography variant="subtitle1">Billing Address</Typography>
+            <FormControl fullWidth sx={{ mt: 2 }}>
+              <InputLabel>Customer group</InputLabel>
+              <Select
+                name="customerGroup"
+                value={formik.values.customerGroup}
+                onChange={formik.handleChange}
+                error={formik.touched.customerGroup && Boolean(formik.errors.customerGroup)}
+              >
+                <MenuItem value="">Please select</MenuItem>
+                <MenuItem value="group1">Group 1</MenuItem>
+                <MenuItem value="group2">Group 2</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              fullWidth
+              label="First name"
+              name="firstName"
+              value={formik.values.firstName}
+              onChange={formik.handleChange}
+              error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+              helperText={formik.touched.firstName && formik.errors.firstName}
+              sx={{ mt: 2 }}
+            />
+            <TextField
+              fullWidth
+              label="Last name"
+              name="lastName"
+              value={formik.values.lastName}
+              onChange={formik.handleChange}
+              error={formik.touched.lastName && Boolean(formik.errors.lastName)}
+              helperText={formik.touched.lastName && formik.errors.lastName}
+              sx={{ mt: 2 }}
+            />
+            <TextField
+              fullWidth
+              label="Street, house number"
+              name="street"
+              value={formik.values.street}
+              onChange={formik.handleChange}
+              error={formik.touched.street && Boolean(formik.errors.street)}
+              helperText={formik.touched.street && formik.errors.street}
+              sx={{ mt: 2 }}
+            />
+            <Grid container spacing={2} sx={{ mt: 1 }}>
+              <Grid size={{xs:6}}>
+                <TextField
+                  fullWidth
+                  label="Postal code"
+                  name="postalCode"
+                  value={formik.values.postalCode}
+                  onChange={formik.handleChange}
+                  error={formik.touched.postalCode && Boolean(formik.errors.postalCode)}
+                  helperText={formik.touched.postalCode && formik.errors.postalCode}
+                />
+              </Grid>
+              <Grid size={{xs:6}}>
+                <TextField
+                  fullWidth
+                  label="Location"
+                  name="location"
+                  value={formik.values.location}
+                  onChange={formik.handleChange}
+                  error={formik.touched.location && Boolean(formik.errors.location)}
+                  helperText={formik.touched.location && formik.errors.location}
+                />
+              </Grid>
+            </Grid>
+            <TextField
+              fullWidth
+              label="Country"
+              name="country"
+              value={formik.values.country}
+              onChange={formik.handleChange}
+              sx={{ mt: 2 }}
+              disabled
+            />
+          </Grid>
+
+          {/* Contact Details */}
+          <Grid size={{xs:12, md:6}}>
+            <Typography variant="subtitle1">Contact Details</Typography>
+            <TextField
+              fullWidth
+              label="E-mail address"
+              name="email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              error={formik.touched.email && Boolean(formik.errors.email)}
+              helperText={formik.touched.email && formik.errors.email}
+              sx={{ mt: 2 }}
+            />
+            <TextField
+              fullWidth
+              label="Repeat E-mail"
+              name="repeatEmail"
+              value={formik.values.repeatEmail}
+              onChange={formik.handleChange}
+              error={formik.touched.repeatEmail && Boolean(formik.errors.repeatEmail)}
+              helperText={formik.touched.repeatEmail && formik.errors.repeatEmail}
+              sx={{ mt: 2 }}
+            />
+            <FormControlLabel
+              control={
+                <Checkbox
+                  name="createAccount"
+                  checked={formik.values.createAccount}
+                  onChange={formik.handleChange}
+                />
+              }
+              label="I would like to create a customer account"
+              sx={{ mt: 2 }}
+            />
+            <TextField
+              fullWidth
+              label="Phone"
+              name="phone"
+              value={formik.values.phone}
+              onChange={formik.handleChange}
+              sx={{ mt: 2 }}
+            />
+            <TextField
+              fullWidth
+              label="Fax"
+              name="fax"
+              value={formik.values.fax}
+              onChange={formik.handleChange}
+              sx={{ mt: 2 }}
+            />
+          </Grid>
+
+          <Grid size={{xs:12}}>
+            <Button variant="contained" color="primary" type="submit" sx={{ float: 'right' }}>
+              Register
+            </Button>
+          </Grid>
+        </Grid>
+      </form>
+
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={4000}
+        onClose={() => setSnackbar({ ...snackbar, open: false })}
       >
-        {/* Header */}
-        <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center space-x-2 mb-6">
-            <Shield className="w-8 h-8 text-primary-600" />
-            <span className="text-2xl font-bold text-gray-900">SchutzNetze24</span>
-          </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            {t('auth.register')}
-          </h1>
-          <p className="text-gray-600">
-            Erstellen Sie Ihr Konto und beginnen Sie noch heute!
-          </p>
-        </div>
-
-        {/* Form */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="bg-white rounded-2xl shadow-xl p-8"
-        >
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-            {/* Name */}
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                {t('auth.name')}
-              </label>
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  {...register('name')}
-                  type="text"
-                  id="name"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-                    errors.name ? 'border-red-300' : 'border-gray-300'
-                  }`}
-                  placeholder="Ihr vollständiger Name"
-                />
-              </div>
-              {errors.name && (
-                <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-              )}
-            </div>
-
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                {t('auth.email')}
-              </label>
-              <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  {...register('email')}
-                  type="email"
-                  id="email"
-                  className={`w-full pl-10 pr-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-                    errors.email ? 'border-red-300' : 'border-gray-300'
-                  }`}
-                  placeholder="ihre@email.de"
-                />
-              </div>
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-              )}
-            </div>
-
-            {/* Phone */}
-            <div>
-              <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                {t('auth.phone')} (Optional)
-              </label>
-              <div className="relative">
-                <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  {...register('phone')}
-                  type="tel"
-                  id="phone"
-                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all"
-                  placeholder="+49 123 456 789"
-                />
-              </div>
-            </div>
-
-            {/* Password */}
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
-                {t('auth.password')}
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  {...register('password')}
-                  type={showPassword ? 'text' : 'password'}
-                  id="password"
-                  className={`w-full pl-10 pr-12 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-                    errors.password ? 'border-red-300' : 'border-gray-300'
-                  }`}
-                  placeholder="••••••••"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
-              </div>
-              {errors.password && (
-                <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>
-              )}
-            </div>
-
-            {/* Confirm Password */}
-            <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
-                {t('auth.confirmPassword')}
-              </label>
-              <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-                <input
-                  {...register('confirmPassword')}
-                  type={showConfirmPassword ? 'text' : 'password'}
-                  id="confirmPassword"
-                  className={`w-full pl-10 pr-12 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none transition-all ${
-                    errors.confirmPassword ? 'border-red-300' : 'border-gray-300'
-                  }`}
-                  placeholder="••••••••"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
-                </button>
-              </div>
-              {errors.confirmPassword && (
-                <p className="mt-1 text-sm text-red-600">{errors.confirmPassword.message}</p>
-              )}
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isSubmitting ? t('common.loading') : t('auth.signUp')}
-            </button>
-          </form>
-
-          {/* Login Link */}
-          <div className="mt-6 text-center">
-            <p className="text-gray-600">
-              {t('auth.hasAccount')}{' '}
-              <Link to="/login" className="text-primary-600 hover:text-primary-500 font-medium">
-                {t('auth.login')}
-              </Link>
-            </p>
-          </div>
-        </motion.div>
-      </motion.div>
-    </div>
+        <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity as any}>
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
+    </Box>
   );
 };
 

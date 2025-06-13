@@ -7,8 +7,8 @@ import './i18n';
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import Home from './pages/Home';
-import Login from './pages/Login';
 import Register from './pages/Register';
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <main className="max-w-7xl m-auto flex-1">
               <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<Register />} />
                 {/* Add more routes as needed */}
               </Routes>

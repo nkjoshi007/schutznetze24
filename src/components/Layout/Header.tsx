@@ -113,10 +113,6 @@ const Header: React.FC = () => {
               <option value="de">🇩🇪 DE</option>
             </select>
           </div>
-          <div className="flex items-center gap-1">
-            EUR (€)
-            <ChevronDown className="w-4 h-4" />
-          </div>
         </div>
       </div>
       <div className="flex items-center justify-between px-4 py-3 bg-white">

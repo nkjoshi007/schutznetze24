@@ -100,20 +100,6 @@
     "imprint": "Impressum",
     "cookies": "Cookies"
   },
-  "auth": {
-    "login": "Anmelden",
-    "register": "Registrieren",
-    "email": "E-Mail",
-    "password": "Passwort",
-    "confirmPassword": "Passwort bestätigen",
-    "name": "Name",
-    "phone": "Telefon",
-    "forgotPassword": "Passwort vergessen?",
-    "noAccount": "Noch kein Konto?",
-    "hasAccount": "Bereits ein Konto?",
-    "signIn": "Anmelden",
-    "signUp": "Registrieren"
-  },
   "cart": {
     "title": "Warenkorb",
     "empty": "Ihr Warenkorb ist leer",
