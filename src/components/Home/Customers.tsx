@@ -1,4 +1,6 @@
 import React from "react";
+import reference5 from "../../assets/reference5.png";
+import reference6 from "../../assets/reference6.png";
 
 interface Customer {
   name: string;
@@ -23,9 +25,9 @@ const customers: Customer[] = [
     description: "Google LLC",
   },
   {
-    name: "Apple",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
-    description: "Apple Inc.",
+    name: "IKEA",
+    logo: reference5,
+    description: "IKEA Deutschland GmbH & Co. KG",
   },
   {
     name: "Netflix",
@@ -43,9 +45,9 @@ const customers: Customer[] = [
     description: "Oracle Corporation",
   },
   {
-    name: "Dell",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/4/48/Dell_Logo.svg",
-    description: "Dell Technologies Inc.",
+    name: "Siemens",
+    logo: reference6,
+    description: "Siemens AG",
   },
 ];
 
@@ -77,11 +79,13 @@ const Customers: React.FC = () => {
             key={index}
             className="flex flex-col items-center text-center space-y-1 sm:space-y-2"
           >
-            <img
-              src={cust.logo}
-              alt={cust.name}
-              className="h-8 sm:h-10 md:h-12 object-contain"
-            />
+            <div className="w-[120px] h-[60px] flex items-center justify-center">
+              <img
+                src={cust.logo}
+                alt={cust.name}
+                className="w-full h-full object-contain"
+              />
+            </div>
             <p className="text-xs sm:text-sm text-gray-700">
               {cust.description}
             </p>
