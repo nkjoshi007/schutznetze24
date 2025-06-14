@@ -25,6 +25,7 @@ import {
 import clsx from "clsx";
 import i18n from "i18next";
 import { Link } from "react-router-dom";
+import LogoImg from "../../assets/logo.jpeg"
 
 const iconMap: Record<string, React.ReactNode> = {
   "CUSTOM - MADE": <Hammer className="w-4 h-4" />,
@@ -123,17 +124,18 @@ const Header: React.FC = () => {
             <Menu className="w-6 h-6" />
           </button>
           <Link to="/" className="flex items-center space-x-2">
-            <Shield className="w-8 h-8 text-primary-600" />
+            {/* <Shield className="w-8 h-8 text-primary-600" /> */}
+            <img
+            src={LogoImg}
+            alt="Logo"
+            className="h-8"
+          />
             <span className="text-2xl font-bold text-gray-900">
               netzhelden24
             </span>
           </Link>
 
-          {/* <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/24_Schutznetze_Logo.svg/2560px-24_Schutznetze_Logo.svg.png"
-            alt="Logo"
-            className="h-8"
-          /> */}
+          
         </div>
         {/* <div className="flex items-center gap-2 bg-gray-100 rounded overflow-hidden px-2 py-1 flex-grow mx-4">
           <input
