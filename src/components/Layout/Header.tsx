@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  Search,
   ShoppingCart,
   User,
   ChevronDown,
@@ -20,7 +19,6 @@ import {
   PhoneCall,
   PackageSearch,
   Dumbbell,
-  Shield,
 } from "lucide-react";
 import clsx from "clsx";
 import i18n from "i18next";
