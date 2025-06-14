@@ -8,6 +8,11 @@ export interface User {
   address?: Address;
 }
 
+export interface AuthResponse {
+  user: User;
+  token: string;
+}
+
 export interface Address {
   street: string;
   city: string;
