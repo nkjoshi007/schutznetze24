@@ -1,4 +1,10 @@
 import React from "react";
+import categorie1 from '../../assets/categorie1.png';
+import categorie2 from '../../assets/categorie2.png';
+import categorie3 from '../../assets/categorie3.png';
+import categorie4 from '../../assets/categorie4.png';
+import categorie5 from '../../assets/categorie5.png';
+import categorie6 from '../../assets/categorie6.png';
 
 interface Category {
   title: string;
@@ -8,27 +14,27 @@ interface Category {
 const categories: Category[] = [
   {
     title: 'Scaffolding & construction nets',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Scaffolding_example.jpg'
+    image: categorie1
   },
   {
     title: 'Hay nets',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/Horse_with_hay_net.jpg'
+    image: categorie2
   },
   {
     title: 'Load securing nets',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e7/Cargo_net_on_truck.jpg'
+    image: categorie3
   },
   {
     title: 'Cat nets',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/4/41/Cats_on_balcony.jpg'
+    image: categorie4
   },
   {
     title: 'Privacy nets',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Balcony_netting.jpg'
+    image: categorie5
   },
   {
     title: 'Pallet racking nets',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Warehouse_safety_netting.jpg'
+    image: categorie6
   }
 ];
 

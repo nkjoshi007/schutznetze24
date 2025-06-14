@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
-import { ArrowRight, Shield, Settings } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
+import { ArrowRight, Shield, Settings } from "lucide-react";
+import bannerImg from "../../assets/banner.jpg";
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
@@ -35,7 +36,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-3xl sm:text-4xl lg:text-6xl font-bold leading-tight"
               >
-                {t('home.hero.title')}
+                {t("home.hero.title")}
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -43,7 +44,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.4 }}
                 className="text-base sm:text-lg lg:text-2xl text-primary-100 leading-relaxed"
               >
-                {t('home.hero.subtitle')}
+                {t("home.hero.subtitle")}
               </motion.p>
             </div>
 
@@ -58,14 +59,14 @@ const Hero: React.FC = () => {
                 className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-accent-500 hover:bg-accent-600 text-white text-sm sm:text-base font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg"
               >
                 <Settings className="w-5 h-5 mr-2" />
-                {t('home.hero.cta')}
+                {t("home.hero.cta")}
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
               <Link
                 to="/products"
                 className="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 bg-transparent border-2 border-white text-white text-sm sm:text-base hover:bg-white hover:text-primary-600 font-semibold rounded-lg transition-all duration-200"
               >
-                {t('home.hero.browse')}
+                {t("home.hero.browse")}
               </Link>
             </motion.div>
 
@@ -73,19 +74,25 @@ const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center sm:space-x-8 space-y-4 sm:space-y-0 pt-8"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 text-center"
             >
-              <div className="text-center">
+              <div>
                 <div className="text-2xl sm:text-3xl font-bold">10+</div>
-                <div className="text-xs sm:text-sm text-primary-200">Jahre Erfahrung</div>
+                <div className="text-xs sm:text-sm text-primary-200">
+                  Jahre Erfahrung
+                </div>
               </div>
-              <div className="text-center">
+              <div>
                 <div className="text-2xl sm:text-3xl font-bold">5000+</div>
-                <div className="text-xs sm:text-sm text-primary-200">Zufriedene Kunden</div>
+                <div className="text-xs sm:text-sm text-primary-200">
+                  Zufriedene Kunden
+                </div>
               </div>
-              <div className="text-center">
+              <div>
                 <div className="text-2xl sm:text-3xl font-bold">24/7</div>
-                <div className="text-xs sm:text-sm text-primary-200">Support</div>
+                <div className="text-xs sm:text-sm text-primary-200">
+                  Support
+                </div>
               </div>
             </motion.div>
           </motion.div>
@@ -99,7 +106,7 @@ const Hero: React.FC = () => {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/163403/boxing-ring-sports-exercise-163403.jpeg?auto=compress&cs=tinysrgb&w=800"
+                src={bannerImg}
                 alt="Professional Safety Nets"
                 className="w-full h-64 sm:h-96 lg:h-[500px] object-cover"
               />

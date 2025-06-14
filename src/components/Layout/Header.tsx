@@ -20,9 +20,11 @@ import {
   PhoneCall,
   PackageSearch,
   Dumbbell,
+  Shield,
 } from "lucide-react";
 import clsx from "clsx";
 import i18n from "i18next";
+import { Link } from "react-router-dom";
 
 const iconMap: Record<string, React.ReactNode> = {
   "CUSTOM - MADE": <Hammer className="w-4 h-4" />,
@@ -91,7 +93,7 @@ const Header: React.FC = () => {
   }, [sidebarOpen]);
 
   return (
-    <header className="w-full max-w-7xl m-auto shadow">
+    <header className="w-full shadow">
       <div className="flex items-center justify-between px-4 py-2 text-sm border-b">
         <div className="flex items-center gap-4">
           <Phone className="w-4 h-4" />
@@ -120,20 +122,27 @@ const Header: React.FC = () => {
           <button onClick={toggleSidebar} className="md:hidden">
             <Menu className="w-6 h-6" />
           </button>
-          <img
+          <Link to="/" className="flex items-center space-x-2">
+            <Shield className="w-8 h-8 text-primary-600" />
+            <span className="text-2xl font-bold text-gray-900">
+              netzhelden24
+            </span>
+          </Link>
+
+          {/* <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/24_Schutznetze_Logo.svg/2560px-24_Schutznetze_Logo.svg.png"
             alt="Logo"
             className="h-8"
-          />
+          /> */}
         </div>
-        <div className="flex items-center gap-2 bg-gray-100 rounded overflow-hidden px-2 py-1 flex-grow mx-4">
+        {/* <div className="flex items-center gap-2 bg-gray-100 rounded overflow-hidden px-2 py-1 flex-grow mx-4">
           <input
             type="text"
             placeholder="Enter search term..."
             className="bg-transparent px-2 flex-grow outline-none text-sm"
           />
           <Search className="w-4 h-4 text-gray-600" />
-        </div>
+        </div> */}
         <div className="relative">
           <ShoppingCart className="w-5 h-5" />
           <span className="absolute -top-2 -right-2 text-xs bg-blue-600 text-white rounded-full px-1">

@@ -22,7 +22,7 @@ const Customers: React.FC = () => {
     <section className="my-12 px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 space-y-2 sm:space-y-0">
         <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">References & customer opinions</h2>
-        <a href="#" className="text-xs sm:text-sm text-red-600">[more references]</a>
+        {/* <a href="#" className="text-xs sm:text-sm text-red-600">[more references]</a> */}
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
         {customers.map((cust, index) => (
